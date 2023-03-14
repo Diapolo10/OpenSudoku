@@ -1,5 +1,5 @@
 
-# project_name Changelog
+# OpenSudoku Changelog
 
 All notable changes to this project will be documented in this file.
 

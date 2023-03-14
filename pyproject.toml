@@ -25,9 +25,9 @@ __init__.py:F401,F403,F405\
 
 
 [tool.poetry]
-name = 'project_name'
+name = 'OpenSudoku'
 version = '0.1.0'
-description = "A template Poetry project structure."
+description = "An open Python implementation of the famous sudoku puzzle ."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -36,9 +36,9 @@ include = ['CHANGELOG.md', 'LICENSE',]
 license = 'MIT'
 readme = 'README.md'
 
-homepage = 'https://pypi.org/project/project_name/'
-repository = 'https://github.com/Diapolo10/project_name'
-documentation = 'https://github.com/Diapolo10/project_name/tree/main/docs'
+homepage = 'https://pypi.org/project/OpenSudoku/'
+repository = 'https://github.com/Diapolo10/OpenSudoku'
+documentation = 'https://github.com/Diapolo10/OpenSudoku/tree/main/docs'
 
 keywords = [
     'python3',
@@ -63,20 +63,20 @@ python = '^3.8.1'
 
 
 [tool.poetry.dev-dependencies]
-coverage = {version = '*', extras = ['toml',]}
-flake8 = '*'
-flake8-pyproject = '*'
-mypy = '*'
-pylint = '*'
-pytest = '*'
-pytest-cov = '*'
-tox = '*'
-tox-gh-actions = '*'
+coverage = {version = '^7.2.1', extras = ['toml',]}
+flake8 = '^6.0.0'
+flake8-pyproject = '^1.2.2'
+mypy = '^1.1.1'
+pylint = '^2.17.0'
+pytest = '^7.2.2'
+pytest-cov = '^4.0.0'
+tox = '^4.4.7'
+tox-gh-actions = '^3.1.0'
 
 
 [tool.poetry.urls]
-"Tracker" = 'https://github.com/Diapolo10/project_name/issues'
-"Changelog" = 'https://github.com/Diapolo10/project_name/blob/main/CHANGELOG.md'
+"Tracker" = 'https://github.com/Diapolo10/OpenSudoku/issues'
+"Changelog" = 'https://github.com/Diapolo10/OpenSudoku/blob/main/CHANGELOG.md'
 
 
 [tool.pylint.'MESSAGES CONTROL']
@@ -104,7 +104,7 @@ testpaths = [
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py36, py37, py38, py39, pypy3
+envlist = py38, py39, py310, py311, pypy3
 isolated_build = True
 
 [gh-actions]
