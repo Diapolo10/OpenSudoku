@@ -17,6 +17,7 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
         tox-env: [
           py310,
+          py311,
           # pypy3
         ]
         include:
