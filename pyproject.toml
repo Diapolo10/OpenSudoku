@@ -29,6 +29,10 @@ name = 'OpenSudoku'
 version = '0.1.0'
 description = "An open Python implementation of the famous sudoku puzzle ."
 
+packages = [
+    {include = "open_sudoku"}
+]
+
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 
