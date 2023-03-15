@@ -1,3 +1,3 @@
-# python-poetry-template
+# OpenSudoku
 
-A template Poetry project structure.
+An open Python implementation of the famous sudoku puzzle.

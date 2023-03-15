@@ -27,7 +27,7 @@ __init__.py:F401,F403,F405\
 [tool.poetry]
 name = 'OpenSudoku'
 version = '0.1.0'
-description = "An open Python implementation of the famous sudoku puzzle ."
+description = "An open Python implementation of the famous sudoku puzzle."
 
 packages = [
     {include = "open_sudoku"}
@@ -51,8 +51,6 @@ classifiers = [
     'Development Status :: 3 - Alpha',
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3.8',
-    'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
@@ -63,7 +61,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = '^3.8.1'
+python = '^3.10.0'
 
 
 [tool.poetry.dev-dependencies]
@@ -108,13 +106,11 @@ testpaths = [
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py38, py39, py310, py311, pypy3
+envlist = py310, py311, pypy3
 isolated_build = True
 
 [gh-actions]
 python =
-    3.8: py38
-    3.9: py39
     3.10: py310
     3.11: py311
     pypy-3.9: pypy3

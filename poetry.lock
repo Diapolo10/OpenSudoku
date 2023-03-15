@@ -474,7 +474,6 @@ mccabe = ">=0.6,<0.8"
 platformdirs = ">=2.2.0"
 tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
 tomlkit = ">=0.10.1"
-typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 spelling = ["pyenchant (>=3.2,<4.0)"]
@@ -733,5 +732,5 @@ files = [
 
 [metadata]
 lock-version = "2.0"
-python-versions = '^3.8.1'
-content-hash = "3ba1ca9258a2e406e65ec5df18584a1e37d2a624fc82c6a785368c5d489756dc"
+python-versions = '^3.10.0'
+content-hash = "968791c73e7b668ac5b15af698cb8c1c9eb3d790ea4e4531289f1095fab424d4"
