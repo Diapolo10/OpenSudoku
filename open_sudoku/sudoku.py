@@ -87,25 +87,32 @@ class Sudoku:
     def is_correct(self) -> bool:
         """Validates the current board state"""
 
-        # Validate rows
-        for row in self.board:
-            if len(set(row)) != self.width and EMPTY_SLOT not in row:
-                return False
+        return (
+            self.validate_rows()
+            and self.validate_cols()
+            and self.validate_grids()
+        )
 
-        # Validate cols
-        for col in zip(*self.board):
-            if any(col.count(num) != 1 for num in range(1, self.width+1)) and EMPTY_SLOT not in col:
-                return False
+    def validate_rows(self):
+        """Validates the rows of the board"""
 
-        # Validate grids
-        for cols in into_groups(self.board, self.subgrid_height):
-            grids = list(join_adjacent_groups(list(zip(*cols)), self.subgrid_width))
+        rows = self.board
+        return self._is_unique(rows, ignored_value=EMPTY_SLOT)
 
-            for grid in grids:
-                if len(set(grid)) != self.width and EMPTY_SLOT not in grid:
-                    return False
+    def validate_cols(self):
+        """Validates the columns of the board"""
 
-        return True
+        cols = zip(*self.board)
+        return self._is_unique(cols, ignored_value=EMPTY_SLOT)
+
+    def validate_grids(self):
+        """Validates the grids of the board"""
+
+        return all(
+            self._is_unique(grids, ignored_value=EMPTY_SLOT)
+            for cols in into_groups(self.board, self.subgrid_height)
+            if (grids := join_adjacent_groups(list(zip(*cols)), self.subgrid_width))
+        )
 
     @staticmethod
     @cache
@@ -135,6 +142,20 @@ class Sudoku:
         ]
 
         return result
+
+    @staticmethod
+    def _is_unique(iterable: Iterable[Iterable[T]], ignored_value: T) -> bool:
+        """Checks a 2D iterable for uniqueness"""
+
+        for inner_iter in iterable:
+            filtered_inner_iter = [
+                value
+                for value in inner_iter
+                if value != ignored_value
+            ]
+            if len(set(filtered_inner_iter)) != len(filtered_inner_iter):
+                return False
+        return True
 
     def insert_number(self, number: int, x_coord: int, y_coord: int):
         """Attempts to insert a number into the grid"""
