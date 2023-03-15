@@ -16,8 +16,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         tox-env: [
-          py310,
-          # pypy3
+          py310
         ]
         include:
           - tox-env: py310
