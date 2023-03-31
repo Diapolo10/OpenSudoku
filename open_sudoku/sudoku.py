@@ -141,6 +141,9 @@ class Sudoku:
             for y, row in enumerate(board)
         ]
 
+        for idx, (board_row, values_row) in enumerate(zip(board, result)):
+            pass
+
         return result
 
     @staticmethod
