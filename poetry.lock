@@ -462,13 +462,13 @@ testing = ["covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-cov (>=4.1)", "pytes
 
 [[package]]
 name = "pytest"
-version = "7.4.0"
+version = "7.4.1"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-7.4.0-py3-none-any.whl", hash = "sha256:78bf16451a2eb8c7a2ea98e32dc119fd2aa758f1d5d66dbf0a59d69a3969df32"},
-    {file = "pytest-7.4.0.tar.gz", hash = "sha256:b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"},
+    {file = "pytest-7.4.1-py3-none-any.whl", hash = "sha256:460c9a59b14e27c602eb5ece2e47bec99dc5fc5f6513cf924a7d03a578991b1f"},
+    {file = "pytest-7.4.1.tar.gz", hash = "sha256:2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"},
 ]
 
 [package.dependencies]
@@ -524,13 +524,13 @@ files = [
 
 [[package]]
 name = "tox"
-version = "4.11.0"
+version = "4.11.1"
 description = "tox is a generic virtualenv management and test command line tool"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "tox-4.11.0-py3-none-any.whl", hash = "sha256:7f7e5f1b20115560e610b9a11143bbcf48270ec3293f36c0a18be7b287c3b41f"},
-    {file = "tox-4.11.0.tar.gz", hash = "sha256:cc665e1e6b095f843b952ea5696f7a64bb64982aff62b62547ef171fa60e21eb"},
+    {file = "tox-4.11.1-py3-none-any.whl", hash = "sha256:da761b4a57ee2b92b5ce39f48ff723fc42d185bf2af508effb683214efa662ea"},
+    {file = "tox-4.11.1.tar.gz", hash = "sha256:8a8cc94b7269f8e43dfc636eff2da4b33a199a4e575b5b086cc51aae24ac4262"},
 ]
 
 [package.dependencies]
@@ -684,4 +684,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10.0"
-content-hash = "d4a40acff5796e8b247aaf6952293d2e9cbe73e99d26320bc4102ce2ac9d53ed"
+content-hash = "41df59283e198a0b9f4dd5854e13b5792c0de1c2c597c7338c6b6b087f1ca752"
