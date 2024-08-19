@@ -1,6 +1,4 @@
-"""Contains global fixtures for unit tests"""
-
-# pylint: disable=W0621
+"""Contains global fixtures for unit tests."""
 
 import pytest
 
@@ -9,9 +7,8 @@ from open_sudoku.sudoku import Sudoku, SudokuBoard
 
 @pytest.fixture(scope='session')
 def unfinished_correct_board() -> SudokuBoard:
-    """Returns an unfinished but correct board layout"""
-
-    test_board_layout = [
+    """Return an unfinished but correct board layout."""
+    return [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -23,14 +20,11 @@ def unfinished_correct_board() -> SudokuBoard:
         [0, 0, 5, 2, 0, 6, 3, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def unfinished_correct_board_small() -> SudokuBoard:
-    """Returns an unfinished but correct, small board layout"""
-
-    test_board_layout = [
+    """Return an unfinished but correct, small board layout."""
+    return [
         [0, 3, 0, 0, 4, 0],
         [1, 4, 6, 0, 3, 2],
         [0, 1, 5, 2, 6, 0],
@@ -39,14 +33,11 @@ def unfinished_correct_board_small() -> SudokuBoard:
         [0, 5, 0, 4, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def finished_correct_board() -> SudokuBoard:
-    """Returns a filled and correct board layout"""
-
-    test_board_layout = [
+    """Return a filled and correct board layout."""
+    return [
         [3, 1, 6, 5, 7, 8, 4, 9, 2],
         [5, 2, 9, 1, 3, 4, 7, 6, 8],
         [4, 8, 7, 6, 2, 9, 5, 3, 1],
@@ -58,14 +49,11 @@ def finished_correct_board() -> SudokuBoard:
         [7, 4, 5, 2, 8, 6, 3, 1, 9],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def finished_correct_board_small() -> SudokuBoard:
-    """Returns a filled and correct, small board layout"""
-
-    test_board_layout = [
+    """Return a filled and correct, small board layout."""
+    return [
         [5, 3, 2, 1, 4, 6],
         [1, 4, 6, 5, 3, 1],
         [3, 1, 5, 2, 6, 4],
@@ -74,14 +62,11 @@ def finished_correct_board_small() -> SudokuBoard:
         [6, 5, 1, 4, 2, 3],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def unfinished_board_incorrect_row() -> SudokuBoard:
-    """Returns an unfinished board layout with an incorrect row"""
-
-    test_board_layout = [
+    """Return an unfinished board layout with an incorrect row."""
+    return [
         [3, 0, 6, 5, 3, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -93,14 +78,11 @@ def unfinished_board_incorrect_row() -> SudokuBoard:
         [0, 0, 5, 2, 0, 6, 3, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def unfinished_board_incorrect_col() -> SudokuBoard:
-    """Returns an unfinished board layout with an incorrect column"""
-
-    test_board_layout = [
+    """Return an unfinished board layout with an incorrect column."""
+    return [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -112,14 +94,11 @@ def unfinished_board_incorrect_col() -> SudokuBoard:
         [9, 0, 5, 2, 0, 6, 3, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def unfinished_board_incorrect_grid() -> SudokuBoard:
-    """Returns an unfinished board layout with an incorrect grid"""
-
-    test_board_layout = [
+    """Return an unfinished board layout with an incorrect grid."""
+    return [
         [3, 0, 6, 5, 0, 8, 4, 0, 0],
         [5, 2, 8, 0, 0, 0, 0, 0, 0],
         [0, 8, 7, 0, 0, 0, 0, 3, 1],
@@ -131,14 +110,11 @@ def unfinished_board_incorrect_grid() -> SudokuBoard:
         [0, 0, 5, 2, 0, 6, 3, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def unfinished_incorrect_board_small() -> SudokuBoard:
-    """Returns an unfinished, incorrect, small board layout"""
-
-    test_board_layout = [
+    """Return an unfinished, incorrect, small board layout."""
+    return [
         [0, 3, 0, 0, 4, 0],
         [1, 4, 6, 0, 3, 2],
         [0, 1, 5, 2, 6, 0],
@@ -147,14 +123,11 @@ def unfinished_incorrect_board_small() -> SudokuBoard:
         [0, 5, 0, 4, 0, 0],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def finished_incorrect_board() -> SudokuBoard:
-    """Returns a filled but incorrect board layout"""
-
-    test_board_layout = [
+    """Return a filled but incorrect board layout."""
+    return [
         [3, 1, 6, 5, 7, 8, 4, 9, 2],
         [5, 2, 9, 1, 3, 4, 5, 6, 8],
         [4, 8, 7, 6, 2, 9, 7, 3, 1],
@@ -166,14 +139,11 @@ def finished_incorrect_board() -> SudokuBoard:
         [7, 4, 5, 2, 8, 6, 3, 1, 9],
     ]
 
-    return test_board_layout
-
 
 @pytest.fixture(scope='session')
 def finished_incorrect_board_small() -> SudokuBoard:
-    """Returns a filled but incorrect, small board layout"""
-
-    test_board_layout = [
+    """Return a filled but incorrect, small board layout."""
+    return [
         [5, 3, 2, 1, 4, 6],
         [1, 4, 6, 5, 3, 1],
         [3, 1, 5, 2, 6, 4],
@@ -182,74 +152,62 @@ def finished_incorrect_board_small() -> SudokuBoard:
         [6, 5, 1, 4, 2, 3],
     ]
 
-    return test_board_layout
 
-
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_sudoku(unfinished_correct_board: SudokuBoard) -> Sudoku:
-    """Returns an unfinished but correct sudoku instance"""
-
+    """Return an unfinished but correct sudoku instance."""
     return Sudoku(board=unfinished_correct_board)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_sudoku_small(unfinished_correct_board_small: SudokuBoard) -> Sudoku:
-    """Returns an unfinished but correct, small sudoku instance"""
-
+    """Return an unfinished but correct, small sudoku instance."""
     return Sudoku(board=unfinished_correct_board_small, subgrid_width=3, subgrid_height=2)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def finished_sudoku(finished_correct_board: SudokuBoard) -> Sudoku:
-    """Returns a finished and correct sudoku instance"""
-
+    """Return a finished and correct sudoku instance."""
     return Sudoku(board=finished_correct_board)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def finished_sudoku_small(finished_correct_board_small: SudokuBoard) -> Sudoku:
-    """Returns a finished and correct, small sudoku instance"""
-
+    """Return a finished and correct, small sudoku instance."""
     return Sudoku(board=finished_correct_board_small, subgrid_width=3, subgrid_height=2)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_sudoku_incorrect_row(unfinished_board_incorrect_row: SudokuBoard) -> Sudoku:
-    """Returns an unfinished sudoku instance with an incorrect row"""
-
+    """Return an unfinished sudoku instance with an incorrect row."""
     return Sudoku(board=unfinished_board_incorrect_row)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_sudoku_incorrect_col(unfinished_board_incorrect_col: SudokuBoard) -> Sudoku:
-    """Returns an unfinished sudoku instance with an incorrect column"""
-
+    """Return an unfinished sudoku instance with an incorrect column."""
     return Sudoku(board=unfinished_board_incorrect_col)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_sudoku_incorrect_grid(unfinished_board_incorrect_grid: SudokuBoard) -> Sudoku:
-    """Returns an unfinished sudoku instance with an incorrect grid"""
-
+    """Return an unfinished sudoku instance with an incorrect grid."""
     return Sudoku(board=unfinished_board_incorrect_grid)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def unfinished_incorrect_sudoku_small(unfinished_incorrect_board_small: SudokuBoard) -> Sudoku:
-    """Returns an unfinished, incorrect, small sudoku instance"""
-
+    """Return an unfinished, incorrect, small sudoku instance."""
     return Sudoku(board=unfinished_incorrect_board_small, subgrid_width=3, subgrid_height=2)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def finished_incorrect_sudoku(finished_incorrect_board: SudokuBoard) -> Sudoku:
-    """Returns a finished but incorrect sudoku instance"""
-
+    """Return a finished but incorrect sudoku instance."""
     return Sudoku(board=finished_incorrect_board)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture
 def finished_incorrect_sudoku_small(finished_incorrect_board_small: SudokuBoard) -> Sudoku:
-    """Returns a finished but incorrect, small sudoku instance"""
-
+    """Return a finished but incorrect, small sudoku instance."""
     return Sudoku(board=finished_incorrect_board_small, subgrid_width=3, subgrid_height=2)
