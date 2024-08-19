@@ -55,7 +55,7 @@ def finished_correct_board_small() -> SudokuBoard:
     """Return a filled and correct, small board layout."""
     return [
         [5, 3, 2, 1, 4, 6],
-        [1, 4, 6, 5, 3, 1],
+        [1, 4, 6, 5, 3, 2],
         [3, 1, 5, 2, 6, 4],
         [2, 6, 4, 3, 5, 1],
         [4, 2, 3, 6, 1, 5],

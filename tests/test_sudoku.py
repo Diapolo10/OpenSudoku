@@ -39,10 +39,30 @@ def test_is_correct_finished(finished_sudoku: Sudoku):
 
 
 def test_is_correct_finished_incorrect(finished_incorrect_sudoku: Sudoku):
-    """Test that the incorrect sudoku violates the rules."""
+    """Test that the incorrect small sudoku violates the rules."""
     assert not finished_incorrect_sudoku.is_correct(), f"\n{finished_incorrect_sudoku}"
 
 
 def test_is_complete_unfinished_small(unfinished_sudoku_small: Sudoku):
     """Test that the unfinished small sudoku is not complete."""
     assert not unfinished_sudoku_small.is_complete(), f"\n{unfinished_sudoku_small}"
+
+
+def test_is_correct_unfinished_small(unfinished_sudoku_small: Sudoku):
+    """Test that the unfinished small sudoku does not violate the rules."""
+    assert unfinished_sudoku_small.is_correct(), f"\n{unfinished_sudoku_small}"
+
+
+def test_is_complete_finished_small(finished_sudoku_small: Sudoku):
+    """Test that the finished small sudoku is complete."""
+    assert finished_sudoku_small.is_complete(), f"\n{finished_sudoku_small}"
+
+
+def test_is_correct_finished_small(finished_sudoku_small: Sudoku):
+    """Test that the finished small sudoku does not violate the rules."""
+    assert finished_sudoku_small.is_correct(), f"\n{finished_sudoku_small}"
+
+
+def test_is_correct_finished_incorrect_small(finished_incorrect_sudoku_small: Sudoku):
+    """Test that the incorrect small sudoku violates the rules."""
+    assert not finished_incorrect_sudoku_small.is_correct(), f"\n{finished_incorrect_sudoku_small}"
