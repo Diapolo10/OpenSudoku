@@ -1,15 +1,12 @@
 [build-system]
-requires = ["poetry-core>=1.2.0", "wheel",]
+requires = ["poetry-core>=1.2.0", "wheel"]
 build-backend = "poetry.core.masonry.api"
 
 
 [tool.coverage.run]
 branch = true
 relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
-]
+omit = [".tox/*", "tests/*"]
 
 
 [tool.poetry]
@@ -17,12 +14,10 @@ name = "OpenSudoku"
 version = "0.1.0"
 description = "An open Python implementation of the famous sudoku puzzle."
 
-packages = [
-    { include = "open_sudoku", from = "src" }
-]
+packages = [{ include = "open_sudoku", from = "src" }]
 
-authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
+authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>"]
+maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>"]
 
 include = []
 license = "MIT"
@@ -32,28 +27,23 @@ homepage = "https://pypi.org/project/OpenSudoku/"
 repository = "https://github.com/Diapolo10/OpenSudoku"
 documentation = "https://github.com/Diapolo10/OpenSudoku/tree/main/docs"
 
-keywords = [
-    "python3",
-]
+keywords = ["python3"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
     "Typing :: Typed",
 ]
 
 
 [tool.poetry.dependencies]
-python = "^3.10.0"
+python = "^3.14.0"
 
 
 [tool.poetry.group.dev.dependencies]
-mypy = ">=1.20.1,<3.0.0"
+mypy = "^2.3.1"
 
 
 [tool.poetry.group.linters]
@@ -61,7 +51,7 @@ optional = true
 
 
 [tool.poetry.group.linters.dependencies]
-ruff = ">=0.15.10,<0.17.0"
+ruff = "^0.16.7"
 
 
 [tool.poetry.group.tests]
@@ -69,9 +59,9 @@ optional = true
 
 
 [tool.poetry.group.tests.dependencies]
-pytest = "^9.0.3"
+pytest = "^9.1.1"
 pytest-cov = "^7.1.0"
-tox = "^4.52.1"
+tox = "^4.61.4"
 tox-gh-actions = "^3.5.0"
 
 
@@ -79,94 +69,36 @@ tox-gh-actions = "^3.5.0"
 "Tracker" = "https://github.com/Diapolo10/OpenSudoku/issues"
 "Changelog" = "https://github.com/Diapolo10/OpenSudoku/blob/main/CHANGELOG.md"
 
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = """
---doctest-modules \
---cov=./ \
---cov-append \
---cov-report html:tests/reports/coverage-html \
---cov-report xml:tests/reports/coverage.xml \
---ignore=docs/
-"""
-testpaths = [
-    "tests",
+[tool.pytest]
+addopts = [
+    "--cov=./",
+    "--cov-append",
+    "--cov-report=html:tests/reports/coverage-html",
+    "--cov-report=term-missing:skip-covered",
+    "--cov-report=xml:tests/reports/coverage.xml",
+    "--doctest-modules",
+    "--durations=5",
+    "--durations-min=1.0",
+    "--ignore=docs/",
 ]
+minversion = "9.0"
+testpaths = ["tests"]
 
 
 [tool.ruff]
-lint.select = [
-    "A",     # Builtins
-    "ANN",   # Annotations
-    "ARG",   # Unused arguments
-    "ASYNC", # Asynchronous code
-    "B",     # Bugbear
-    "BLE",   # Blind except
-    "C4",    # Comprehensions
-    "C90",   # mccabe
-    "COM",   # Commas
-    # "CPY",   # Copyright
-    "D1",    # Undocumented public elements
-    "D2",    # Docstring conventions
-    "D3",    # Triple double quotes
-    "D4",    # Docstring text format
-    "DTZ",   # Datetimes
-    "E",     # Errors
-    "EM",    # Error messages
-    "ERA",   # Commented-out code
-    "EXE",   # Executable
-    "F",     # Pyflakes
-    "FA",    # __future__ annotations
-    "FBT",   # "Boolean trap"
-    "FIX",   # "FIXME"-comments
-    "FLY",   # F-strings
-    # "FURB",  # Refurb
-    "G",     # Logging format
-    "I",     # Isort
-    "ICN",   # Import conventions
-    "INP",   # Disallow PEP-420 (Implicit namespace packages)
-    "INT",   # gettext
-    "ISC",   # Implicit str concat
-    "LOG",   # Logging
-    "N",     # PEP-8 Naming
-    "PERF",  # Unnecessary performance costs
-    "PGH",   # Pygrep hooks
-    "PIE",   # Unnecessary code
-    "PL",    # Pylint
-    "PT",    # Pytest
-    "PTH",   # Use Pathlib
-    "PYI",   # Stub files
-    "Q",     # Quotes
-    "RET",   # Return
-    "RUF",   # Ruff
-    "RSE",   # Raise
-    "S",     # Bandit
-    "SIM",   # Code simplification
-    "SLF",   # Private member access
-    "SLOT",  # __slots__
-    "T10",   # Debugger
-    "T20",   # Print
-    "TCH",   # Type checking
-    "TD",    # "TODO"-comments
-    "TID",   # Tidy imports
-    "TRY",   # Exception handling
-    "UP",    # Pyupgrade
-    "W",     # Warnings
-    "YTT",   # sys.version
-]
+lint.select = ["ALL"]
 lint.ignore = [
-    "ANN101",  # Type annotation for `self`
+    "COM812",  # Missing trailing comma (disabled due to formatter conflict)
+    "CPY001",  # Missing copyright notice at the top of the file
     "D203",    # One blank line before class docstring
     "D212",    # Multi-line summary first line
+    "ISC001",  # Single-line implicit string concatenation (disabled due to formatter conflict)
     "PLR0913", # Too many arguments
     "Q000",    # Single quotes found but double quotes preferred
 ]
 line-length = 120
-# preview = true
 show-fixes = true
-src = ["src",]
-target-version = "py310"
+src = ["src"]
 
 
 [tool.ruff.lint.flake8-copyright]
@@ -184,8 +116,8 @@ max-complexity = 10
 
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-"__init__.py" = ["F401", "F403", "F405",]
-"tests/*" = ["ANN", "ARG", "INP001", "S101",]
+"__init__.py" = ["F401", "F403", "F405", "PGH003"]
+"tests/*" = ["ANN", "ARG", "INP001", "S101"]
 
 
 [tool.ruff.lint.pylint]
@@ -202,15 +134,12 @@ ban-relative-imports = "all"
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py310, py311, py312, pypy3
+envlist = py314
 skip_missing_interpreters = true
 
 [gh-actions]
 python =
-    3.10: py310
-    3.11: py311
-    3.12: py312
-    pypy-3.10: pypy3
+    3.14: py314
 
 [testenv]
 passenv = GITHUB_*
